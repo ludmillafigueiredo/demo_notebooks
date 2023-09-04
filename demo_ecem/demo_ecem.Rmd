@@ -1,0 +1,52 @@
+---
+title: "Your title here"
+output:
+  html_document:
+    code_folding: hide
+    toc: true
+  pdf_document: default
+---
+
+```{r set-up, include = FALSE}
+# We suggest having a chunk dedicated to variables containing the paths to the folders related to the project.
+# The code in this chunk is not relevant for the reader, and thus is not included in the knitted version (therefore, `include = FALSE`).
+# This is also useful if you are not using the folder structure suggested by this kit, and want to preserve your privacy.
+# Feel free to edit these paths to adapt them to your needs or not use this suggestion at all.
+
+data_dir <- file.path("results", "data", "processed")  ## Do NOT play with stuff in raw_data. That is your back-up. Work only on `processed`.
+scripts_dir <- file.path("results", "scripts")
+suppl_dir <- file.path("results", "supplementary")
+figs_dir <- file.path("text", "figures")
+tabs_dir <- file.path("text", "tables")
+```
+
+# Read your data
+```{r}
+# e.g.
+# data <- read.csv(file.path(data_dir, "your_datasheet_names.csv") ## replace with the name of the file you want to read in
+```
+
+# Data analysis
+
+```{r}
+source(file.path(scripts_dir, "sum.R"))
+```
+
+
+## Figure 1
+```{r}
+# Here, you write the code to create a graph included in the main text
+# To avoid the repetition of having the same figure here as well, either include a line that saves the figure in the figures directory, or include `eval=FALSE` in the chunk options, and the code will not run. In case you choose the latter, be aware that any objects created here will not actually be created when the notebook gets knitted. Only the code for it will be shown.
+```
+
+## Figure S1
+```{r}
+# Here, write the code to create a graph that is not included in the main text, and thus referred to as Figure S1
+# Contrary to a chunk with a figure from the main text, do not include `eval=FALSE` in the chunk options, because you want the figure created here will not actually be created when the notebook gets knitted. You can still have a line that saves the figure in the figures directory, but make sure that the figure produced also appears in the notebook when the latter gets knitted.
+```
+
+*R version, the OS and attached or loaded packages:*
+<!-- Leave this chunk so people know the software they need to reproduce your work. -->
+```{r}
+sessionInfo()
+```
