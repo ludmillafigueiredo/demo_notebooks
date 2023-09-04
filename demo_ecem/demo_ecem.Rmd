@@ -20,6 +20,9 @@ figs_dir <- file.path("text", "figures")
 tabs_dir <- file.path("text", "tables")
 ```
 
+
+Add some text to show off git.
+
 # Read your data
 ```{r}
 # e.g.
